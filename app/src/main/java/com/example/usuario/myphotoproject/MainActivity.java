@@ -15,10 +15,10 @@ import static android.widget.Toast.*;
 
 
 public class MainActivity extends AppCompatActivity {
-    int gusta = 0;
-    int no_gusta = 0;
+    //int gusta = 0;
+    //int no_gusta = 0;
     private int[] array_imag = {R.drawable.ic_img_20150404_124327,R.drawable.ic_img_20150404_131241,R.drawable.ic_wapa};
-    private int contador;
+    private int contador = 0;
     private static int tamanio = 0;
 
     @Override
@@ -79,12 +79,12 @@ public class MainActivity extends AppCompatActivity {
                     contador++;
                     if (contador == tamanio){
                         startActivity(intent);
+                    }else {
+
+                        ImageView imagen = (ImageView) findViewById(R.id.imagen);
+                        imagen.setImageResource(array_imag[contador]);
+                        Log.d("MIMENSAJE", "Ha tocado el botonSi");
                     }
-
-                    ImageView imagen = (ImageView)findViewById(R.id.imagen);
-                    imagen.setImageResource(array_imag[contador]);
-                    Log.d("MIMENSAJE", "Ha tocado el botonSi");
-
 
 
 
@@ -111,11 +111,11 @@ public class MainActivity extends AppCompatActivity {
                     contador++;
                     if (contador == tamanio){
                         startActivity(intent);
+                    }else {
+                        ImageView imagen = (ImageView) findViewById(R.id.imagen);
+                        imagen.setImageResource(array_imag[contador]);
+                        Log.d("MIMENSAJE", "Ha tocado el botonNo");
                     }
-                    ImageView imagen = (ImageView)findViewById(R.id.imagen);
-                    imagen.setImageResource(array_imag[contador]);
-                    Log.d("MIMENSAJE", "Ha tocado el botonNo");
-
 
                 }
             }
